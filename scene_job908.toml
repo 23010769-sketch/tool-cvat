@@ -1,0 +1,23 @@
+# Task 211 / Job 908: rectangle boxes for all classes the local models support.
+# Resolve names against the live Job. Never copy label IDs from Job 206.
+# Does not use BDD reference lookup: screenshot filenames have been renamed.
+[yolo]
+pipeline = "scene"
+output_geometry = "rectangle"
+model = "models/bdd100k-yolo11n.pt"
+confidence = 0.45
+iou = 0.50
+duplicate_iou = 0.70
+batch_size = 1
+image_size = 640
+device = "cpu"
+semantic_model = "models/segformer-b0-cityscapes"
+semantic_image_size = 640
+semantic_confidence = 0.50
+semantic_min_pixels = 64
+
+[labels]
+# Automatic namespaced mapping from the current Job labels:
+# det/person -> pedestrian (or person if it is the only matching name)
+# det/traffic sign -> traffic sign; semantic/traffic sign -> traffic_sign
+# Missing labels are skipped. Duplicate names still require a Terminal choice.

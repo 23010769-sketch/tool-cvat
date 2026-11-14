@@ -1,0 +1,20 @@
+# Reference transfer, NOT predictions. Requires exact BDD filename + RGB match
+# for every Job frame. Never uploads CVAT images to the public source.
+[yolo]
+pipeline = "bdd-reference"
+output_geometry = "rectangle"
+duplicate_iou = 0.70
+batch_size = 1
+device = "cpu"
+
+[labels]
+"traffic sign" = 646
+"area/alternative" = 647
+"area/drivable" = 648
+"lane/crosswalk" = 649
+"lane/double white" = 650
+"lane/double yellow" = 651
+"lane/road curb" = 652
+"lane/single other" = 653
+"lane/single white" = 654
+"lane/single yellow" = 655

@@ -1,0 +1,23 @@
+# Model detection 10 lớp BDD100K; KHÔNG phải cấu hình gán đủ mọi label trong Job.
+# Chuẩn bị weights: python prepare_bdd_model.py
+[yolo]
+model = "models/bdd100k-yolo11n.pt"
+confidence = 0.45
+iou = 0.50
+duplicate_iou = 0.70
+batch_size = 1
+image_size = 640
+device = "cpu"
+
+[labels]
+# ID đã đối chiếu từ kiểm kê API Job 206; vẫn được kiểm tra lại với labels sống mỗi lần chạy.
+person = 637
+rider = 638
+car = 639
+truck = 640
+bus = 641
+train = 642
+motor = 643
+bike = 644
+"traffic light" = 645
+"traffic sign" = 646

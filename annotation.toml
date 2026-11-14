@@ -1,0 +1,15 @@
+# Không đặt tài khoản/token trong file này.
+[yolo]
+model = "models/yolo11n.pt"
+confidence = 0.45
+iou = 0.50
+duplicate_iou = 0.85
+batch_size = 1
+image_size = 640
+device = "cpu"
+
+# Chỉ thêm mapping đã kiểm tra ngữ nghĩa; tên đích phải tồn tại trong Job.
+# Ví dụ nếu Job có label "Pedestrian": person = "Pedestrian"
+# Nếu có nhiều label cùng phù hợp: chọn ID trong Terminal; có thể lưu person = ID_thực.
+# Dùng person = "" nếu muốn bỏ qua lớp person; không điền ID ví dụ chưa kiểm chứng.
+[labels]

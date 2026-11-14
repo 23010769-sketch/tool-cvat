@@ -1,0 +1,5 @@
+cvat-sdk==2.76.0
+requests==2.34.2
+ultralytics==8.4.208
+tqdm==4.70.1
+Pillow==13.0.0

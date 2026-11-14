@@ -1,0 +1,41 @@
+# Mọi kết quả là rectangle; semantic model cung cấp vùng để lấy box từng vùng rời.
+# Không bao gồm lane/drivable.
+# ID/type đã đối chiếu báo cáo API Job 206; mỗi lần chạy vẫn xác minh lại quyền/phạm vi.
+[yolo]
+pipeline = "scene"
+output_geometry = "rectangle"
+model = "models/bdd100k-yolo11n.pt"
+confidence = 0.45
+iou = 0.50
+duplicate_iou = 0.70
+batch_size = 1
+image_size = 640
+device = "cpu"
+semantic_model = "models/segformer-b0-cityscapes"
+semantic_image_size = 640
+semantic_confidence = 0.50
+semantic_min_pixels = 64
+
+[labels]
+"det/person" = 637
+"det/rider" = 638
+"det/car" = 639
+"det/truck" = 640
+"det/bus" = 641
+"det/train" = 642
+"det/motor" = 643
+"det/bike" = 644
+"det/traffic light" = 645
+"det/traffic sign" = 646
+"semantic/road" = 1750
+"semantic/sidewalk" = 1751
+"semantic/building" = 1752
+"semantic/wall" = 1753
+"semantic/fence" = 1754
+"semantic/pole" = 1755
+"semantic/traffic light" = 1756
+"semantic/traffic sign" = 1757
+"semantic/vegetation" = 1758
+"semantic/terrain" = 1759
+"semantic/sky" = 1760
+"semantic/person" = 1761
